@@ -1,0 +1,64 @@
+body{
+    margin:0;
+    padding: 0;
+}
+.main{
+    width: 900px;
+    margin: 0 auto;
+
+}
+.nav-bar{
+    height: 100px;
+}
+.nav-bar ul{
+    float: right;
+    margin: 20px 0;
+    
+}
+.nav-bar ul li{
+    display: inline-block;
+    margin-right: 40px;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+#search-section{
+    height: 50px;
+    text-align: center;
+    padding: 10px;
+    margin: 30px 0;
+}
+#meal-dashboard{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap: 20px;
+}
+.div-category{
+    text-align: center;
+    font-weight: bold;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: lightgrey;
+
+}
+.div-category img{
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: white;
+}
+.dishName{
+    padding: 10px;
+}
+
+.input{
+    height: 30px;
+    width: 400px;
+}
+button{
+    height: 30px;
+    background-color: salmon;
+    border-radius: 5px;
+}
