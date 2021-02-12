@@ -65,7 +65,7 @@ button{
     border-radius: 5px;
 }
 #description{
-    background-color: chartreuse;
+    text-align: center;
     padding: 20px;
 }
 #description h2{
@@ -79,4 +79,7 @@ button{
 }
 .meal-Ingredient{
      left:50%;
+}
+.meal-Ingredient ul{
+    display:inline-block;
 }

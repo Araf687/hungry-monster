@@ -52,6 +52,9 @@ function searchData(meal){
             removeAllChildNodes(parentNode);
             searchByLetter(data);
         })
+        .catch(function(){
+            alert('You have given wrong meal name or id or wrong category.Please search the valid data');
+        })
     }
     else if(parseFloat(meal))
     {
