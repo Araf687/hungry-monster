@@ -1,16 +1,16 @@
 body{
     margin:0;
     padding: 0;
-    background-color: wheat;
+    
 }
 #main{
     width: 1200px;
     margin: 0 auto;
-
 }
 .nav-bar{
     height: 100px;
 }
+
 .nav-bar ul{
     float: right;
     margin: 20px 0;
@@ -61,19 +61,20 @@ a{
 }
 button{
     height: 35px;
-    background-color: salmon;
+    background-color: rgb(253, 114, 99);
     border-radius: 5px;
 }
 #description{
-    text-align: center;
     padding: 20px;
+    margin-left: 28%;
 }
-#description h2{
+#description h2,h6{
     margin:20px;
 }
 #description img {
     height: 300px;
     width: 500px;
+    border: 2px solid lightgray;
     border-radius: 10px;
     left:50%;
 }
@@ -82,4 +83,9 @@ button{
 }
 .meal-Ingredient ul{
     display:inline-block;
+}
+#monster-logo{
+    text-align: center;
+    display: block;
+    margin-top: 40px;
 }

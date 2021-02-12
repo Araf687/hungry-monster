@@ -1,4 +1,3 @@
-urlAllMeal='https://www.themealdb.com/api/json/v1/1/categories.php';
 function createChild(tagName,className,categoryName,categoryImg,parentNode)
 {
     const category=document.createElement(tagName);
@@ -12,21 +11,11 @@ function createChild(tagName,className,categoryName,categoryImg,parentNode)
 
 }
 function removeAllChildNodes(parent) {
+    document.getElementById('monster-logo').style.display='none';
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
 }
-function loadData()
-{
-    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=a`)
-    .then(res => res.json()) 
-    .then(data => {
-        x=data;
-        console.log(x);
-    
-    })
-}
-loadData();
 function searchByLetter(data){
     const parentNode=document.getElementById('meal-dashboard');
     for (let i = 0; i < data.meals.length; i++) {
@@ -38,16 +27,19 @@ function searchByLetter(data){
 document.getElementById('submit-btn').addEventListener('click',function(){
     const mealName=document.getElementById('input').value;
     searchData(mealName);
-    console.log(mealName);
+
 })
 
 function searchData(meal){
-    if(meal.length==1)
+    if(meal.length==0)
+    {
+        alert("search bar is empty.Please search with proper data.");
+    }
+    else if(meal.length==1)
     {
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${meal}`)
         .then(res => res.json())
         .then(data => { 
-            console.log(data);
             const parentNode=document.getElementById('meal-dashboard');
             removeAllChildNodes(parentNode);
             searchByLetter(data);
@@ -86,7 +78,6 @@ document.getElementById('meal-dashboard').addEventListener('click',function(even
         fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`)
         .then(res=>res.json())
         .then(data=> {
-            console.log(data.meals[0]);
             const imageSrc=data.meals[0].strMealThumb;
             const mainDiv=document.getElementById('main');
             document.getElementById('meal-dashboard').style.display='none';
@@ -97,22 +88,19 @@ document.getElementById('meal-dashboard').addEventListener('click',function(even
             <img src="${imageSrc}" alt="">
             <div class=meal-Ingredient>
                 <h2>${mealName}</h2>
-                <p>Ingredients</p>
+                <h6>Ingredients</h6>
                 <ul>
-                    <li>${data.meals[0].strIngredient1}</li>
-                    <li>${data.meals[0].strIngredient2}</li>
-                    <li>${data.meals[0].strIngredient3}</li>
-                    <li>${data.meals[0].strIngredient4}</li>
-                    <li>${data.meals[0].strIngredient5}</li>
-                    <li>${data.meals[0].strIngredient6}</li>
+                    <li>${data.meals[0].strMeasure1} ${data.meals[0].strIngredient1}</li>
+                    <li>${data.meals[0].strMeasure2} ${data.meals[0].strIngredient2}</li>
+                    <li>${data.meals[0].strMeasure3} ${data.meals[0].strIngredient3}</li>
+                    <li>${data.meals[0].strMeasure4} ${data.meals[0].strIngredient4}</li>
+                    <li>${data.meals[0].strMeasure5} ${data.meals[0].strIngredient5}</li>
+                    <li>${data.meals[0].strMeasure6} ${data.meals[0].strIngredient6}</li>
                 </ul>
             </div>`
             
             mealDescription.innerHTML=description;
             mainDiv.appendChild(mealDescription);
-            console.log(mealDescription);
-
-
         })
        
 
