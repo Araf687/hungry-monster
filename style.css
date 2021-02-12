@@ -1,9 +1,10 @@
 body{
     margin:0;
     padding: 0;
+    background-color: wheat;
 }
-.main{
-    width: 900px;
+#main{
+    width: 1200px;
     margin: 0 auto;
 
 }
@@ -22,7 +23,7 @@ body{
 }
 a{
     text-decoration: none;
-    color: black;
+    color: black; 
 }
 #search-section{
     height: 50px;
@@ -32,15 +33,15 @@ a{
 }
 #meal-dashboard{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4,1.5fr);
     grid-gap: 20px;
 }
 .div-category{
     text-align: center;
     font-weight: bold;
-    border: 2px solid black;
     border-radius: 10px;
     background-color: lightgrey;
+    border: 1px solid rgb(41, 43, 46);
 
 }
 .div-category img{
@@ -53,12 +54,29 @@ a{
     padding: 10px;
 }
 
-.input{
-    height: 30px;
-    width: 400px;
+#input{
+    height: 35px;
+    width: 500px;
+    border-radius: 5px;
 }
 button{
-    height: 30px;
+    height: 35px;
     background-color: salmon;
     border-radius: 5px;
+}
+#description{
+    background-color: chartreuse;
+    padding: 20px;
+}
+#description h2{
+    margin:20px;
+}
+#description img {
+    height: 300px;
+    width: 500px;
+    border-radius: 10px;
+    left:50%;
+}
+.meal-Ingredient{
+     left:50%;
 }
