@@ -1,4 +1,4 @@
-function createChild(tagName,className,categoryName,categoryImg,parentNode)
+createChild=(tagName,className,categoryName,categoryImg,parentNode)=>
 {
     const category=document.createElement(tagName);
     category.className=className;
@@ -10,13 +10,13 @@ function createChild(tagName,className,categoryName,categoryImg,parentNode)
         parentNode.appendChild(category);
 
 }
-function removeAllChildNodes(parent) {
+removeAllChildNodes=(parent)=>{
     document.getElementById('monster-logo').style.display='none';
     while (parent.firstChild) {
         parent.removeChild(parent.firstChild);
     }
 }
-function searchByLetter(data){
+searchByLetter=(data)=>{
     const parentNode=document.getElementById('meal-dashboard');
     for (let i = 0; i < data.meals.length; i++) {
         const categoryName=data.meals[i].strMeal;
@@ -30,7 +30,7 @@ document.getElementById('submit-btn').addEventListener('click',function(){
 
 })
 
-function searchData(meal){
+searchData=(meal)=>{
     if(meal.length==0)
     {
         alert("search bar is empty.Please search with proper data.");
@@ -46,7 +46,9 @@ function searchData(meal){
         })
         .catch(function(){
             alert('You have given wrong meal name or id or wrong category.Please search the valid data');
+            document.getElementById('monster-logo').style.display='block';
         })
+      
     }
     else if(parseFloat(meal))
     {
